@@ -123,6 +123,9 @@ body {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link:hover,
@@ -132,10 +135,25 @@ body {
 .site-nav .link.current {
   color: var(--accent-color);
 }
+.current {
+  position: relative;
+}
+.current::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
 .ikon-envelope,
 .ikon-phone {
   margin-right: 10px;
   fill: #757575;
+  transition: fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-address-item .link:hover .ikon-envelope,
 .header-address-item .link:focus .ikon-envelope,
@@ -168,6 +186,8 @@ body {
   color: #757575;
 
   text-decoration: none;
+  transition: color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-address .link:hover,
 .header-address .link:focus {
@@ -221,6 +241,8 @@ body {
   letter-spacing: 0.06em;
 
   cursor: pointer;
+  transition: background-color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -289,6 +311,26 @@ body {
   flex-basis: calc((100% - 30px * 3) / 3);
   margin-left: 30px;
   margin-top: 30px;
+
+  position: relative;
+}
+.works-example .title {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(47, 48, 58, 0.8);
+  padding-top: 27px;
+  padding-bottom: 27px;
+
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
 }
 
 /*===========================TEAM============================*/
@@ -342,10 +384,23 @@ body {
   height: 44px;
   border-radius: 50%;
   fill: #afb1b8;
+  transition: background-color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link-light:hover,
 .social-link-light:focus {
   background-color: var(--accent-color);
+}
+.ikon-instagram,
+.ikon-twitter,
+.ikon-facebook,
+.ikon-linkedin,
+.ikon-instagram,
+.ikon-twitter,
+.ikon-facebook,
+.ikon-linkedin {
+  transition: fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link-light:hover .ikon-instagram,
 .social-link-light:hover .ikon-twitter,
@@ -396,10 +451,17 @@ body {
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
+  transition: border-color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover,
 .client-link:focus {
   border-color: var(--accent-color);
+}
+.ikon-client,
+.ikon-client {
+  transition: fill 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover .ikon-client,
 .client-link:focus .ikon-client {
@@ -448,6 +510,8 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   text-decoration: none;
+  transition: color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-mail:hover,
@@ -488,6 +552,8 @@ body {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   fill: #ffffff;
+  transition: background-color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link-dark:hover,
 .social-link-dark:focus {
@@ -529,12 +595,20 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+.work-filter .item {
+  transition: box-shadow 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .work-filter .button:hover,
 .work-filter .button:focus {
   background-color: var(--accent-color);
   color: #ffffff;
 }
-
+.work-filter .button {
+  transition: background-color 250ms, color 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
 /*==========================PORTFOLIO========================*/
 .header-portfolio {
   border-bottom: 1px solid #ececec;
@@ -551,6 +625,9 @@ body {
 
   margin-left: 30px;
   margin-top: 30px;
+
+  transition: box-shadow 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio > .item:hover,
 .portfolio > .item:focus {
@@ -562,7 +639,38 @@ body {
   text-decoration: none;
   color: inherit;
 }
+.portfolio-description {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-description .text {
+  transform: translateY(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-top: 63px;
+  padding-right: 24px;
+  padding-bottom: 63px;
+  padding-left: 24px;
 
+  overflow: auto;
+
+  background: rgba(33, 150, 243, 0.9);
+
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+
+  color: #ffffff;
+
+  transition: transform 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-link:hover .portfolio-description .text,
+.portfolio-link:focus .portfolio-description .text {
+  transform: translateY(0%);
+}
 .portfolio-link .title {
   font-weight: bold;
   font-size: 18px;
@@ -582,4 +690,56 @@ body {
   font-size: 16px;
   line-height: 1.87;
   letter-spacing: 0.03em;
+}
+/*==================================BACKDROP================================*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.2);
+
+  z-index: 100;
+
+  transition: opacity 250ms, visibility 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  min-height: 581px;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close-btn {
+  right: 8px;
+  top: 8px;
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
